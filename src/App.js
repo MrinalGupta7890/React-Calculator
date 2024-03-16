@@ -1,37 +1,53 @@
-import React, {useState} from  'react';
+import React, { useState } from 'react';
 import './App.css';
 
+// The 'App' function is the main component of the application. It is a calculator that
+// uses state to keep track of the current value input by the user.
 function App() {
+  // This line initializes the state with the value of an empty string.
   const [value, setValue] = useState('');
+
+  // The return statement returns the JSX that renders the calculator.
   return (
     <div className="container">
       <div className='calculator'>
         <form action=''>
           <div className='display'>
+            {/* This input displays the current value. */}
             <input type='text' value={value}/>
           </div>
           <div>
+            {/* The 'AC' button sets the value to an empty string. */}
             <input type='button' value='AC' onClick={e => setValue('')}/>
+            {/* The 'DE' button removes the last character from the value. */}
             <input type='button' value='DE' onClick={e => setValue(value.slice(0,-1))}/>
+            {/* The '.' button appends the '.' character to the value. */}
             <input type='button' value='.' onClick={e => setValue(value + e.target.value)}/>
+            {/* The '/' button appends the '/' character to the value. */}
             <input type='button' value='/' onClick={e => setValue(value + e.target.value)}/>
           </div>
           <div>
+            {/* These buttons append the respective number to the value. */}
             <input type='button' value='7' onClick={e => setValue(value + e.target.value)}/>
             <input type='button' value='8' onClick={e => setValue(value + e.target.value)}/>
             <input type='button' value='9' onClick={e => setValue(value + e.target.value)}/>
+            {/* The '*' button appends the '*' character to the value. */}
             <input type='button' value='*' onClick={e => setValue(value + e.target.value)}/>
           </div>
           <div>
+            {/* These buttons append the respective number to the value. */}
             <input type='button' value='4' onClick={e => setValue(value + e.target.value)}/>
             <input type='button' value='5' onClick={e => setValue(value + e.target.value)}/>
             <input type='button' value='6' onClick={e => setValue(value + e.target.value)}/>
+            {/* The '+' button appends the '+' character to the value. */}
             <input type='button' value='+' onClick={e => setValue(value + e.target.value)}/>
           </div>
           <div>
+            {/* These buttons append the respective number to the value. */}
             <input type='button' value='1' onClick={e => setValue(value + e.target.value)}/>
             <input type='button' value='2' onClick={e => setValue(value + e.target.value)}/>
             <input type='button' value='3' onClick={e => setValue(value + e.target.value)}/>
+            {/* The '-' button appends the '-' character to the value. */}
             <input type='button' value='-' onClick={e => setValue(value + e.target.value)}/>
           </div>
           <div>
